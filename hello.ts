@@ -1,6 +1,8 @@
 class Greeter {
     fullName: string = "";
-
+    skills: Array<{name: string, point: number}> = [
+        {name: "programming", point: 33}
+    ]
     constructor(firstName: string, lastName: string) {
         this.fullName = `${lastName} ${firstName}`
     }
