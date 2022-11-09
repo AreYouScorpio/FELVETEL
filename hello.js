@@ -1,12 +1,19 @@
 var Greeter = /** @class */ (function () {
-    function Greeter(firstName, lastName) {
+    // constructor(firstName: string, lastName: string) {
+    //     this.fullName = `${lastName} ${firstName}`
+    // }
+    function Greeter(nameObj) {
         this.fullName = "";
-        this.fullName = "".concat(lastName, " ").concat(firstName);
+        this.skills = [
+            { name: "programming", point: 33 }
+        ];
+        this.fullName = "".concat(nameObj.lastName, " ").concat(nameObj.firstName);
     }
     Greeter.prototype.greet = function () {
         return "Hello, my name is ".concat(this.fullName, ".");
     };
     return Greeter;
 }());
-var g = new Greeter("Jozsef", "Cserko");
+// let g: Greeter = new Greeter(`Jozsef`, `Cserko`);
+var g = new Greeter({ firstName: 'Jozsef', lastName: 'Cserko' });
 document.body.innerHTML = g.greet();
